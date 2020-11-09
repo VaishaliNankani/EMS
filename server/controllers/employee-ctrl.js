@@ -18,8 +18,8 @@ async function getConnection(){
     connection = await oracledb.getConnection(
       {
         user: "ADMIN",
-        password: "Passwordoci*30",
-        connectString: 'db202010231723_medium'
+        password: "password",
+        connectString: 'dbname_medium'
       });
 
 return connection;
