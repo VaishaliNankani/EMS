@@ -1,0 +1,158 @@
+import React, { Component } from 'react'
+import api from '../api'
+
+import styled from 'styled-components'
+
+const Title = styled.h1.attrs({
+    className: 'h1',
+})``
+
+const Wrapper = styled.div.attrs({
+    className: 'form-group',
+})`
+    margin: 0 30px;
+`
+
+const Label = styled.label`
+    margin: 5px;
+`
+
+const InputText = styled.input.attrs({
+    className: 'form-control',
+})`
+    margin: 5px;
+`
+
+const Button = styled.button.attrs({
+    className: `btn btn-primary`,
+})`
+    margin: 15px 15px 15px 5px;
+`
+const CancelButton = styled.button.attrs({
+    className: `btn btn-danger`,
+})`
+    margin: 15px 15px 15px 5px;
+`
+
+
+class EmployeesUpdate extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            id: this.props.match.params.id,
+            empid: '',
+            name: '',
+            emailid: '',
+            phonenumber: '',
+            address: '',
+        }
+    }
+
+    handleChangeInputEmpId = async event => {
+        const empid = event.target.value
+        this.setState({ empid })
+    }
+    handleChangeInputName = async event => {
+        const name = event.target.value
+        this.setState({ name })
+    }
+
+    handleChangeInputName = async event => {
+        const name = event.target.value
+        this.setState({ name })
+    }
+
+    handleChangeInputEmailId = async event => {
+        const emailid = event.target.value
+        this.setState({ emailid })
+    }
+
+    handleChangeInputPhoneNumber = async event => {
+        const phonenumber = event.target.value
+        this.setState({ phonenumber })
+    }
+    
+    handleChangeInputAddress = async event => {
+        const address  = event.target.value
+        this.setState({ address })
+    }
+    handleUpdateEmployee = async () => {
+        const { id, empid,name, emailid, phonenumber,address } = this.state
+        const payload = { empid,name, emailid,phonenumber,address }
+
+        await api.updateEmployeeById(id, payload).then(res => {
+            window.alert(`Employee updated successfully`)
+            this.setState({
+                empid: '',
+                name: '',
+                emailid: '',
+                phonenumber: '',
+                address: '',
+            })
+        })
+       window.location.href = `/employees/list`
+
+    }
+
+    componentDidMount = async () => {
+        const { id } = this.state
+        const employee = await api.getEmployeeById(id)
+
+        this.setState({
+            name: employee.data.data.name,
+            emailid: employee.data.data.emailid,
+            phonenumber: employee.data.data.phonenumber,
+            address: employee.data.data.address
+        })
+    }
+
+    render() {
+        const { name,emailid,phonenumber, address } = this.state
+        return (
+            <Wrapper>
+                <Title>Update Employee</Title>
+
+                <Label>EmployeeId: </Label>
+                <InputText
+                    type="number"
+                    value={empid}
+                    onChange={this.handleChangeInputEmpId}
+                />
+                <Label>Name: </Label>
+                <InputText
+                    type="text"
+                    value={name}
+                    onChange={this.handleChangeInputName}
+                />
+
+                <Label>EmailId: </Label>
+                <InputText
+                    type="text"
+                    value={emailid}
+                    onChange={this.handleChangeInputEmailId}
+                />
+
+                <Label>ContactNumber: </Label>
+                <InputText
+                    type="number"
+                    value={phonenumber}
+                    onChange={this.handleChangeInputPhoneNumber}
+                />
+
+                <Label>Address: </Label>
+                <InputText
+                    type="text"
+                    value={address}
+                    onChange={this.handleChangeInputAddress}
+                />
+
+                <Button onClick={this.handleUpdateEmployee}>Update Employee</Button>
+                <CancelButton onClick={()=>window.history.back()}
+>Cancel</CancelButton>
+            </Wrapper>
+        )
+    }
+}
+
+export default EmployeesUpdate

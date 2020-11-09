@@ -1,0 +1,259 @@
+.logo{
+    cursor: pointer;
+}
+.login-page {
+    height: 100vh;
+}
+.login-page .left-side .bg-block{
+    height: 100%;
+    color: #fff;
+    padding: 0 .9375rem;
+}
+.login-page .center-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-page .left-side {
+    height: 100%;
+    width: 38%;
+    background: lightgray;;
+    margin-left: 15px;
+}
+.login-page .right-side {
+    height: 100%;
+    width: 60%;
+    overflow: auto;
+}
+
+.login-page .right-side .content {
+    min-height: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.login-wrapper {
+    display: inline-block;
+    padding: 2px;
+    text-align: center;
+}
+
+.login-wrapper .login {
+    width: 480px;
+    line-height: 2;
+    padding: 20px;
+    position: relative;
+}
+
+.login-wrapper .login.hidden {
+    display: none;
+}
+.user-fields{
+    text-align: left;
+}
+
+.login-wrapper .login .client-login {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.login-wrapper .login .login-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.login-wrapper .login .application-name {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.58;
+}
+
+.login-wrapper .login .application-text {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.login-wrapper .login .application-text .application-notes {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.58;
+    width: 340px;
+    margin: auto;
+}
+
+.login-wrapper .login .user-fields {
+    position: relative;
+}
+
+.login-wrapper .login .user-fields .a-text-input {
+    margin-bottom: 20px;
+}
+
+.login-wrapper .login .user-fields .error-message {
+    color: #E0301E;
+    font-size: 14px;
+    line-height: 1;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.login-wrapper .login .user-fields .error-message.hidden {
+    display: none;
+}
+
+.login-wrapper .login .user-fields .a-textarea-footer {
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login-wrapper .login .user-fields .a-textarea-footer .login-operation {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.login-wrapper .login .user-fields .a-textarea-footer .login-operation .forgot-password-btn {
+    font-size: 14px;
+    line-height: 1.14;
+    color: #D04A02;
+    cursor: pointer;
+}
+
+.login-wrapper .login .user-fields .a-textarea-footer .reset-password {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-wrapper .login .user-fields .a-textarea-footer .cancel-forgot-password {
+    font-size: 14px;
+    line-height: 1.14;
+    color: #D04A02;
+    cursor: pointer;
+}
+
+.login-wrapper .login .user-fields .forgot-password-footer {
+    flex-direction: column;
+}
+
+.login-wrapper .forgot-password {
+    width: 521px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.16);
+    background-color: #FFFFFF;
+    line-height: 0;
+    padding: 40px 20px 20px 20px;
+    position: relative;
+}
+
+.login-wrapper .forgot-password.hidden {
+    display: none;
+}
+
+.login-wrapper .forgot-password .client-login {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.login-wrapper .forgot-password .login-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.login-wrapper .forgot-password .application-name {
+    margin-top: 39px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.58;
+}
+
+.login-wrapper .forgot-password .application-text {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 2.38;
+    margin-bottom: 40px;
+}
+
+.login-wrapper .forgot-password .application-text .application-notes {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.58;
+    width: 340px;
+    margin: auto;
+}
+
+.login-wrapper .forgot-password .user-fields {
+    padding: 0 20px 20px;
+    text-align: left;
+    position: relative;
+}
+
+.login-wrapper .forgot-password .user-fields .a-text-input {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.login-wrapper .forgot-password .user-fields .error-message {
+    color: #E0301E;
+    font-size: 14px;
+    line-height: 1;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.login-wrapper .forgot-password .user-fields .error-message.hidden {
+    display: none;
+}
+
+.login-wrapper .forgot-password .user-fields .a-textarea-footer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login-wrapper .forgot-password .user-fields .a-textarea-footer .login-operation {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.login-wrapper .forgot-password .user-fields .a-textarea-footer .login-operation .forgot-password-btn {
+    font-size: 14px;
+    line-height: 1.14;
+    color: #D04A02;
+    cursor: pointer;
+}
+
+.login-wrapper .forgot-password .user-fields .a-textarea-footer .reset-password {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-wrapper .forgot-password .user-fields .a-textarea-footer .cancel-forgot-password {
+    font-size: 14px;
+    line-height: 1.14;
+    color: #D04A02;
+    cursor: pointer;
+}
+
+.login-wrapper .forgot-password .user-fields .forgot-password-footer {
+    flex-direction: column;
+}
+
+.userlogin span:nth-child(2){
+    border-left: solid 1px #7d7d7d;
+    padding-left: 10px;
+    margin-left: 10px;
+}
